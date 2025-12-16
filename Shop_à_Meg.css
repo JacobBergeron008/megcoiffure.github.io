@@ -382,8 +382,9 @@ nav ul li a:hover {
     line-height: 1.8;
 }
 
-/* ====================== FOOTER ====================== */
-/* ====================== FOOTER ====================== */
+
+/*footer*/
+
 .footer {
     background-color: #000;
     color: white;
@@ -404,12 +405,12 @@ nav ul li a:hover {
 .footer-logo,
 .footer-social {
     text-align: center;
+    flex: 1 1 200px; /* Permet de prendre de l'espace égal */
 }
 
-/* Taille du logo dans le footer réduite */
-.footer-logo img {
-    width: 70px;        /* Au lieu de 90px → plus petit et discret */
-    height: auto;
+.footer-info {
+    flex: 2 1 400px;
+    text-align: center; /* Centre le texte des infos aussi */
 }
 
 .footer-info h4 {
@@ -428,6 +429,12 @@ nav ul li a:hover {
 .footer-info a {
     color: white;
     text-decoration: none;
+}
+
+/* Logo footer plus petit */
+.footer-logo img {
+    width: 70px;
+    height: auto;
 }
 
 .btn-facebook {
@@ -454,11 +461,12 @@ nav ul li a:hover {
     color: #aaa;
 }
 
-/* Sur mobile : centrage parfait + logo encore un peu plus petit si besoin */
+/* Sur mobile : tout en colonne, parfaitement centré */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
     }
 
     .footer-logo,
@@ -466,13 +474,14 @@ nav ul li a:hover {
     .footer-social {
         text-align: center;
         width: 100%;
+        flex: none; /* Évite que les blocs prennent trop de place */
     }
 
     .footer-logo img {
-        width: 60px;   /* Encore plus petit sur mobile pour équilibrer */
+        width: 60px; /* Encore plus petit sur mobile */
     }
 
     .btn-facebook {
-        margin: 20px auto;
+        margin: 30px auto 10px; /* Bon espacement et centré */
     }
 }
