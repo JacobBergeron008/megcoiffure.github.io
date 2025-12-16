@@ -13,8 +13,22 @@
     <main>
         <header>
             <nav>
-                <img src="images/logowhite.jpg" alt="logo">
-                <ul>
+                <a href="#" class="logo">
+                    <img src="images/logowhite.jpg" alt="logo">
+                </a>
+
+                <!-- Checkbox cachée pour ouvrir/fermer le menu -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+                <!-- Icône hamburger -->
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <!-- Menu -->
+                <ul class="menu">
                     <li><a href="#Reservez">RÉSERVEZ</a></li>
                     <li><a href="#Services">SERVICES</a></li>
                     <li><a href="#Apropos">À PROPOS</a></li>
