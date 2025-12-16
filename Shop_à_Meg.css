@@ -27,12 +27,13 @@ nav {
     box-sizing: border-box;
 }
 
-nav img {
+nav .logo img {
     height: 60px;
     width: auto;
 }
 
-nav ul {
+/* Menu desktop */
+.menu {
     display: flex;
     gap: 20px;
     list-style: none;
@@ -40,25 +41,97 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a {
+.menu li a {
     text-decoration: none;
     color: grey;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    font-size: 16px;
 }
 
-nav ul li a:hover {
+.menu li a:hover {
     color: rgb(151, 30, 61);
     text-decoration: underline;
 }
 
+/* Hamburger (caché sur grand écran) */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(151, 30, 61);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==================== RESPONSIVE MOBILE ==================== */
 @media (max-width: 768px) {
     nav {
         padding: 10px 3%;
     }
-    nav ul {
-        gap: 10px;
-        font-size: 14px;
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        border-top: 3px solid rgb(151, 30, 61);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 15px;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .menu li a:hover {
+        background-color: rgba(151, 30, 61, 0.1);
+        color: rgb(151, 30, 61);
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+
+    /* Transformation hamburger → croix */
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -8px);
     }
 }
 
@@ -354,9 +427,9 @@ nav ul li a:hover {
     max-width: 600px;
 }
 
-.carte:hover{
+.carte:hover {
     transform: translateY(-3px);
-   box-shadow: 0 12px 30px rgb(130, 20, 50);
+    box-shadow: 0 12px 30px rgb(130, 20, 50);
 }
 
 .maps {
@@ -382,9 +455,7 @@ nav ul li a:hover {
     line-height: 1.8;
 }
 
-
-/*footer*/
-
+/* ====================== FOOTER ====================== */
 .footer {
     background-color: #000;
     color: white;
@@ -405,12 +476,12 @@ nav ul li a:hover {
 .footer-logo,
 .footer-social {
     text-align: center;
-    flex: 1 1 200px; /* Permet de prendre de l'espace égal */
+    flex: 1 1 200px;
 }
 
 .footer-info {
     flex: 2 1 400px;
-    text-align: center; /* Centre le texte des infos aussi */
+    text-align: center;
 }
 
 .footer-info h4 {
@@ -431,7 +502,6 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Logo footer plus petit */
 .footer-logo img {
     width: 70px;
     height: auto;
@@ -461,7 +531,6 @@ nav ul li a:hover {
     color: #aaa;
 }
 
-/* Sur mobile : tout en colonne, parfaitement centré */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -474,14 +543,14 @@ nav ul li a:hover {
     .footer-social {
         text-align: center;
         width: 100%;
-        flex: none; /* Évite que les blocs prennent trop de place */
+        flex: none;
     }
 
     .footer-logo img {
-        width: 60px; /* Encore plus petit sur mobile */
+        width: 60px;
     }
 
     .btn-facebook {
-        margin: 30px auto 10px; /* Bon espacement et centré */
+        margin: 30px auto 10px;
     }
 }
