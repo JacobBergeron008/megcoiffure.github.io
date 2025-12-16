@@ -54,7 +54,7 @@ nav .logo img {
     text-decoration: underline;
 }
 
-/* Hamburger (caché sur grand écran) */
+/* Hamburger */
 .menu-toggle {
     display: none;
 }
@@ -117,11 +117,12 @@ nav .logo img {
         color: rgb(151, 30, 61);
     }
 
+    /* Menu ouvert */
     #menu-toggle:checked ~ .menu {
         display: flex;
     }
 
-    /* Transformation hamburger → croix */
+    /* Hamburger → croix */
     #menu-toggle:checked ~ .hamburger span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
